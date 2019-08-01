@@ -18,7 +18,7 @@ body {
     box-sizing: border-box;
 }
 
-.logo{
+.logo {
     width: 80px;
     height: 80px;
 }
@@ -51,7 +51,8 @@ body {
     width: 30%;
     height: 40%;
     padding: 4% 5%;
-    display: flex;
+    /* display: flex; just for tests */
+    display: none;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -125,31 +126,85 @@ body {
     font-weight: 300;
 }
 
-.back_button, .confirm_button {
+.back_button,
+.confirm_button {
     border: 1px solid #111;
     font-size: 18px;
     font-weight: 300;
-    margin: 25% 20% 5px 20%;
+    margin: 1% 10%;
     width: 60%;
     transition: background-color .5s ease-in-out, color .5s .1s ease-in-out;
 }
 
-.back_button:hover, .confirm_button:hover {
+.back_button:hover,
+.confirm_button:hover {
     background-color: #222;
     color: white;
 }
 
 .game_box {
     transition: opacity 1s ease-in-out;
-    opacity: 0;
-    display: none;
+    /* opacity: 0; just for tests */
+    opacity: 1;
+    /* display: none; just for tests */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 50%;
     height: 60%;
-    padding: 4% 5%;
-    border: 2px solid var(--main_elements_color);
+    padding: 1% 2%;
+    /* border: 2px solid var(--main_elements_color); */
+    margin-top: 5%;
 }
 
-.hide {
+.board {
+    margin: 4% 0;
+    width: 456px;
+    height: 456px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    cursor: pointer;
+}
+
+.field {
+    border: 2px solid #222;
+}
+
+.field:hover {
+    background: #eee;
+}
+
+.nought {
+    /* border: 2px solid #222; */
+    width: 152px;
+    height: 152px;
+    content: url("src/logo2.png")
+}
+
+
+.cross {
+    /* border: 2px solid #222; */
+    width: 152px;
+    height: 152px;
+    content: url("src/logo2.png")
+    /* background: #222;
+    height: 100px;
+    width: 10px;
+    margin: auto;
+    position: relative;
+    transform: rotate(45deg); */
+}
+
+/* height: 10px;
+    
+    
+    top: 40px;
+    width: 100px;
+}
+
+/* .hide {
     display: none;
 }
 
@@ -166,37 +221,4 @@ body {
 
 .visually_appear {
     opacity: 1;
-}
-
-/* 
-@keyframes disappear {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-        display: none;
-    }
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-        
-    }
-}
-
-.disappear {
-    transition: display 3s;
-    animation: disappear 1.5s forwards;
-}
-
-.appear {  
-    animation: appear 1.5s forwards;
-    display: block;
 } */
