@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Noughts and Crosses</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <script defer src='game.js'></script>
+  <link rel="stylesheet" type="text/css" href="game.css">
+</head>
+
+<body>
+  <nav class="navitaion_bar">
+    <div class="title">
+      <img class="logo" src="src/logo2.png" alt="Logo">
+      <h1>Noughts and Crosses</h1>
+    </div>
+    <button class="button">About the game</button>
+  </nav>
+  <div class="box">
+    <h2>Enter names of players</h2>
+    <form class="players_form">
+      <div class="name_box">
+        <input class="name" type="text" name="player1" required="required" maxlength="15">
+        <label for="player1">Player 1</label>
+      </div>
+      <div class="name_box">
+        <input class="name" type="text" name="player2" required="required" maxlength="15">
+        <label for="player2">Player 2</label>
+      </div>
+    </form>
+    <button class="button confirm_button">Play</button>
+  </div>
+  <div class="game_box">
+
+    <button class="button back_button">Back</button>
+  </div>
+</body>
+
+</html>
