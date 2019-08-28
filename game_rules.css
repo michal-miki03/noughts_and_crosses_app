@@ -1,0 +1,38 @@
+.game_link {
+    width: 20%;
+    padding: 0% 5%;
+    text-decoration: none;
+    color: var(--main_elements_color);
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+.text{
+    padding: 0% 20%;
+    margin-top: 5%;
+}
+
+@media only screen and (max-width: 1000px){
+    .text {
+        padding: 0% 8%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .text {
+        padding: 2% 4%;
+        margin-top: 16%;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .text {
+        margin-top: 30%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .text {
+        margin-top: 40%;
+    }
+}

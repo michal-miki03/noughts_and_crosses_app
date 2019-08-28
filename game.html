@@ -8,18 +8,31 @@
   <title>Noughts and Crosses</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <script defer src='game.js'></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" type="text/css" href="game.css">
 </head>
 
 <body>
   <nav class="navitaion_bar">
     <div class="title">
-      <img class="logo" src="src/logo2.png" alt="Logo">
+      <img class="logo" src="src/Noughts and Crosses2.png" alt="Logo">
       <h1>Noughts and Crosses</h1>
     </div>
-    <button class="button">About the game</button>
+    <a href="/game_rules.html" class="rules_link link">About the game</a>
   </nav>
-  <div class="box">
+  <div class="start_box box">
+    <h2>Play with:</h2>
+    <div>
+      <input type="radio" id="play_with_computer" name="game_type" class="game_type" value="Computer" checked>
+      <label for="play_with_computer">Computer</label>
+    </div>
+    <div>
+      <input type="radio" id="play_with_friend" name="game_type" class="game_type" value="Friend">
+      <label for="play_with_friend">Friend</label>
+    </div>
+    <button class="button start_button">START</button>
+  </div>
+  <div class="names_box box">
     <h2>Enter names of players</h2>
     <form class="players_form">
       <div class="name_box">
@@ -34,8 +47,30 @@
     <button class="button confirm_button">Play</button>
   </div>
   <div class="game_box">
-
-    <button class="button back_button">Back</button>
+    <div class="info_box">
+      <h1>Turn</h1>
+      <h2 class="info_text"></h2>
+      <div class="info_image">
+        <img class="image nought_icon" src="/src/nought1.png">
+        <img class="image cross_icon" src="/src/cross1.png">
+        <img class="image winner_icon" src="/src/winner.png">
+      </div>
+      <button class="button back_button">Back</button>
+      <button class="button play_again_button">Try again</button>
+    </div>
+    <div class="game">
+      <div class="board">
+        <div class="field" data-row="0" data-column="0"></div>
+        <div class="field" data-row="0" data-column="1"></div>
+        <div class="field" data-row="0" data-column="2"></div>
+        <div class="field" data-row="1" data-column="0"></div>
+        <div class="field" data-row="1" data-column="1"></div>
+        <div class="field" data-row="1" data-column="2"></div>
+        <div class="field" data-row="2" data-column="0"></div>
+        <div class="field" data-row="2" data-column="1"></div>
+        <div class="field" data-row="2" data-column="2"></div>
+      </div>
+    </div>
   </div>
 </body>
 
