@@ -34,75 +34,6 @@ game_fields.forEach(field => {
   field.addEventListener('click', choose);
 });
 
-function change_player (sign) {
-  clearIcons();
-  game_icons[sign].style.zIndex = 1;
-  info_text.innerHTML = players_names[sign];
-}
-
-start_button.addEventListener('click', start_game);
-
-play_button.addEventListener('click', open_board);
-
-game_type.forEach(input => {
-  input.addEventListener('keyup', e => {
-    if (e.keyCode === 13) {
-      start_game();
-    }
-  });
-});
-
-input_players_names.forEach(input => {
-  input.addEventListener('keyup', e => {
-    if (e.keyCode === 13) {
-      open_board();
-    }
-  });
-});
-
-function start_game () {
-  if (game_type[0].checked) {
-    isOnePlayerGame = true;
-    players_names[0] = 'You';
-    players_names[1] = 'Computer';
-    info_text.innerHTML = players_names[0];
-    start_box.classList.add('visually_hide');
-    setTimeout(() => {
-      start_box.classList.add('hide');
-      game_box.classList.add('appear');
-      setTimeout(() => {
-        game_box.classList.add('visually_appear');
-        change_player(0);
-      }, 200);
-    }, 1000);
-  } else {
-    isOnePlayerGame = false;
-    start_box.classList.add('visually_hide');
-    setTimeout(() => {
-      start_box.classList.add('hide');
-      names_box.classList.add('appear');
-      setTimeout(() => {
-        names_box.classList.add('visually_appear');
-        change_player(0);
-      }, 200);
-    }, 1000);
-  }
-}
-
-function open_board () {
-  getPlayerNames();
-  names_box.classList.remove('visually_appear');
-  names_box.classList.add('visually_hide');
-  setTimeout(() => {
-    names_box.classList.remove('appear');
-    game_box.classList.add('appear');
-    setTimeout(() => {
-      game_box.classList.add('visually_appear');
-      change_player(0);
-    }, 200);
-  }, 1000);
-}
-
 back_button.addEventListener('click', () => {
   board = [['', '', ''], ['', '', ''], ['', '', '']];
   for (let ii = 0; ii < PLAYERS_ICONS.length; ii++) {
@@ -134,8 +65,77 @@ play_again_button.addEventListener('click', () => {
   }
   info_image.classList.remove(PLAYERS_ICONS[+!sign]);
   info_image.classList.remove(PLAYERS_ICONS[2]);
-  change_player(sign);
+  changePlayer(sign);
 });
+
+start_button.addEventListener('click', startGame);
+
+play_button.addEventListener('click', openBoard);
+
+game_type.forEach(input => {
+  input.addEventListener('keyup', e => {
+    if (e.keyCode === 13) {
+      startGame();
+    }
+  });
+});
+
+input_players_names.forEach(input => {
+  input.addEventListener('keyup', e => {
+    if (e.keyCode === 13) {
+      openBoard();
+    }
+  });
+});
+
+function changePlayer (sign) {
+  clearIcons();
+  game_icons[sign].style.zIndex = 1;
+  info_text.innerHTML = players_names[sign];
+}
+
+function startGame () {
+  if (game_type[0].checked) {
+    isOnePlayerGame = true;
+    players_names[0] = 'You';
+    players_names[1] = 'Computer';
+    info_text.innerHTML = players_names[0];
+    start_box.classList.add('visually_hide');
+    setTimeout(() => {
+      start_box.classList.add('hide');
+      game_box.classList.add('appear');
+      setTimeout(() => {
+        game_box.classList.add('visually_appear');
+        changePlayer(0);
+      }, 200);
+    }, 1000);
+  } else {
+    isOnePlayerGame = false;
+    start_box.classList.add('visually_hide');
+    setTimeout(() => {
+      start_box.classList.add('hide');
+      names_box.classList.add('appear');
+      setTimeout(() => {
+        names_box.classList.add('visually_appear');
+        changePlayer(0);
+      }, 200);
+    }, 1000);
+  }
+}
+
+function openBoard () {
+  getPlayerNames();
+  names_box.classList.remove('visually_appear');
+  names_box.classList.add('visually_hide');
+  setTimeout(() => {
+    names_box.classList.remove('appear');
+    game_box.classList.add('appear');
+    setTimeout(() => {
+      game_box.classList.add('visually_appear');
+      changePlayer(0);
+    }, 200);
+  }, 1000);
+}
 
 function getPlayerNames () {
   players_names[0] = input_players_names[0].value
@@ -158,17 +158,17 @@ function choose (event) {
     check();
     if (!isEnd) {
       setTimeout(() => {
-        computer_move();
+        computerMove();
         check();
       }, 200);
     }
   } else {
-    change_player(+!sign);
+    changePlayer(+!sign);
     check();
   }
 }
 
-function computer_move () {
+function computerMove () {
   if (round < 8) {
     let row, col;
     do {
