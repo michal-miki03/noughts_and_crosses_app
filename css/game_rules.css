@@ -8,31 +8,31 @@
 }
 
 .text{
-    padding: 0% 20%;
+    padding: 0 20%;
     margin-top: 5%;
 }
 
-@media only screen and (max-width: 1000px){
+@media (max-width: 1000px){
     .text {
-        padding: 0% 8%;
+        padding: 0 8vh;
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
     .text {
         padding: 2% 4%;
-        margin-top: 16%;
+        margin-top: 16vh;
     }
 }
 
-@media only screen and (max-width: 570px) {
+@media (max-width: 570px) {
     .text {
-        margin-top: 30%;
+        margin-top: 30vh;
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media (max-width: 500px), (max-height: 600px) {
     .text {
-        margin-top: 40%;
+        margin-top: 20vh;
     }
 }
