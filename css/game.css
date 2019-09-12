@@ -5,22 +5,32 @@
     color: var(--main_elements_color);
     font-family: 'Montserrat',
         sans-serif;
+    -webkit-transition: all .2s ease-out;
     transition: all .2s ease-out;
 }
 
 .rules_link:hover {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .box {
     width: 30%;
     height: 40%;
     padding: 2% 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     border: 2px solid var(--main_elements_color);
+    -webkit-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
 }
 
@@ -47,17 +57,33 @@
 }
 
 .players_form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .name_box {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 30px 0;
     width: 100%;
 }
@@ -69,6 +95,7 @@
     left: 0px;
     z-index: 1;
     font-size: 16px;
+    -webkit-transition: all .2s .01s ease-in;
     transition: all .2s .01s ease-in;
 }
 
@@ -77,10 +104,11 @@
     display: block;
     background: none;
     border: 0;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid var(--boarder_color);
     z-index: 2;
     width: 100%;
     font-size: 16px;
+    -webkit-transition: border-color .2s .01s ease-in;
     transition: border-color .2s .01s ease-in;
     outline: none;
 }
@@ -100,7 +128,7 @@
 
 .button {
     padding: 10px;
-    background-color: white;
+    background-color: var(--background_color);
     border: none;
     outline: none;
     font-family: 'Montserrat', sans-serif;
@@ -108,6 +136,7 @@
     font-size: 18px;
     font-weight: 600;
     width: 60%;
+    -webkit-transition: background-color .5s ease-in-out, color .5s .1s ease-in-out;
     transition: background-color .5s ease-in-out, color .5s .1s ease-in-out;
     margin: 2% auto;
 }
@@ -126,11 +155,16 @@
 }
 
 .game_box {
+    -webkit-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
     opacity: 0;
     display: none;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 70%;
     height: 60%;
     padding: 1% 2%;
@@ -138,23 +172,41 @@
 }
 
 .game {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .info_box {
     width: 15%;
     height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
     left: 10%;
     top: 30%;
-    justify-content: space-evenly;
-    align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-right: 10%;
     border: 1px solid var(--boarder_color);
     padding: 8% 2%;
@@ -180,15 +232,16 @@
 }
 
 .field:hover {
-    box-shadow: 0 0 10px var(--boarder_color);
+    -webkit-box-shadow: 0 0 10px var(--boarder_color);
+            box-shadow: 0 0 10px var(--boarder_color);
 }
 
 .cross {
-    background-image: url("src/cross1.png");
+    background-image: url("../src/cross.png");
 }
 
 .nought {
-    background-image: url("src/nought1.png");
+    background-image: url("../src/nought.png");
 }
 
 .info_image {
@@ -209,17 +262,17 @@
 }
 
 .cross_icon {
-    background-image: url("src/cross1.png");
+    background-image: url("../src/cross.png");
     z-index: 0;
 }
 
 .nought_icon {
-    background-image: url("src/nought1.png");
+    background-image: url("../src/nought.png");
     z-index: 1;
 }
 
 .winner_icon {
-    background-image: url("src/winner.png");
+    background-image: url("../src/winner.png");
     z-index: 0;
 }
 
@@ -232,6 +285,8 @@
 }
 
 .appear {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -239,7 +294,7 @@
     opacity: 1;
 }
 
-@media only screen and (max-width: 1500px) {
+@media (max-width: 1500px) {
 
     .game_box {
         margin-top: 10%;
@@ -250,7 +305,7 @@
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
 
     .button {
         padding: 10px;
@@ -266,7 +321,9 @@
     }
 
     .game_box {
-        justify-content: space-evenly;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
         width: 95%;
         padding: 0;
         margin-top: 16%;
@@ -285,7 +342,7 @@
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px), (max-height: 600px) {
 
     .navitaion_bar {
         padding: 0;
@@ -293,13 +350,19 @@
     }
 
     .game_box {
-        flex-direction: column-reverse;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
         margin-top: 12%;
     }
 
     .info_box {
         border: none;
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         width: 90%;
         height: 10%;
         padding: 0;
@@ -322,16 +385,16 @@
     .back_button {
         margin-left: 25%;
         color: transparent;
-        background: url(src/icons8-home-30.png) center no-repeat;
+        background: url(../src/icons8-home-30.png) center no-repeat;
     }
 
     .play_again_button {
         color: transparent;
-        background: url(src/icons8-reset-30.png) center no-repeat;
+        background: url(../src/icons8-reset-30.png) center no-repeat;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px), (max-height: 600px) {
 
     .board {
         width: 350px;
@@ -339,8 +402,7 @@
     }
 }
 
-@media only screen and (max-width: 360px) {
-
+@media (max-width: 360px) {
     .board {
         width: 250px;
         height: 250px;
@@ -350,7 +412,7 @@
         margin-bottom: 10%;
     }
 
-    .image{
+    .image {
         left: -10px;
     }
 }
